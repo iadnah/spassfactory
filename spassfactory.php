@@ -116,11 +116,12 @@ class spassfactory {
 		'o' => '0'
 	);
 
-	private $sym = array(
+	private $syms = array(
 		'`', '~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')',
 		'-', '_', '=', '+', '[', '{', ']', '}', '|', '\\',
 		';', ':', '"', '\'', ',', '<', '.', '>', '/', '?'
 	);
+
 
 	private $vl = 0;
 	private $cl = 0;
@@ -207,7 +208,7 @@ class spassfactory {
 				$d = mt_rand(0,1);
 				if ($d > 0) {
 					$sub_count = strlen($this->subs["$char_lower"]);
-					$chunk[$x] = $this->subs["$char_lower"][ mt_rand(0, $sub_count) ];
+					$chunk[$x] = $this->subs["$char_lower"][ mt_rand(0, $sub_count - 1) ];
 				}
 			}
 		}
